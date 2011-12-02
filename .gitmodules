@@ -56,5 +56,5 @@
    ignore = untracked
 [submodule "_vim/bundle/mucomment.vim"]
 	path = _vim/bundle/mucomment.vim
-	url = git@github.com:tonyskn/mucomment.vim.git
+	url = git://github.com/tonyskn/mucomment.vim.git
    ignore = untracked

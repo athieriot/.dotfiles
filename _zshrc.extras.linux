@@ -2,17 +2,35 @@
 # Linux extra configuration
 #
 
-source /etc/profile.d/autojump.zsh
+# source /etc/profile.d/autojump.zsh
 
 # Customize to your needs...
-export M2_REBEL="-Xms512m -Xmx768m -Dmaven.test.skip=true -noverify -javaagent:/home/tsokhon/idea/jrebel.jar"
-export M2_HOME=/home/tsokhon/apps/apache-maven-3.0.1
-export PATH=$M2_HOME/bin:$PATH
-export JDK_HOME=/usr/lib/jvm/java-6-sun
-export JAVA_HOME=$JDK_HOME
-export INSTALL4J_HOME=/home/tsokhon/apps/install4j5
 
 # Alias
-alias tmux="TERM=screen-256color-bce tmux"
-alias thunar="thunar > /dev/null 2>&1"
-alias minecraft='java -Xmx1024M -Xms512M -cp ~/minecraft.jar net.minecraft.LauncherFrame'
+alias ack=ack-grep
+alias gl='git log --graph --oneline --decorate --all --color'
+
+export EDITOR=vim
+
+export MAVEN_HOME=/opt/maven                                                            
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export ANT_HOME=/opt/ant
+export ECLIPSE_HOME=/opt/eclipse
+export PLAY_HOME=/opt/play
+export SOAPUI_HOME=/opt/soapui
+export IDEA_HOME=/opt/idea
+export BREW_HOME=/opt/homebrew
+export SCALA_HOME=/opt/scala
+export SBT_HOME=/opt/sbt
+export FANTOM_HOME=/opt/fantom
+
+export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
+export ANT_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
+export JAVA_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
+
+export TALIESIN_HOME=/home/aurelien/Documents/sources/vidal-utilities/production-tools
+ 
+# Customize to your needs...
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin
+
+[[ -s "/home/aurelien/.rvm/scripts/rvm" ]] && source "/home/aurelien/.rvm/scripts/rvm"
