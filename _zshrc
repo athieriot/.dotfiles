@@ -18,7 +18,7 @@ export ZSH_THEME="tjkirch"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [ $(uname) = "Darwin" ]
 then
-   plugins=(git npm brew)
+   plugins=(git npm github brew ruby gem osx ssh-agent)
 else
    plugins=(git npm github command-not-found ruby gem)
 fi
