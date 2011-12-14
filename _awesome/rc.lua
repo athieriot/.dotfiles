@@ -223,7 +223,31 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    -- awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    --
+   -- Run or raise applications with dmenu
+   awful.key({ modkey }, "r",
+   function ()
+       local f_reader = io.popen( "dmenu_path | dmenu -b -nb '".. beautiful.bg_normal .."' -nf '".. beautiful.fg_normal .."' -sb '#955'")
+       local command = assert(f_reader:read('*a'))
+       f_reader:close()
+       if command == "" then return end
+
+       -- Check throught the clients if the class match the command
+       local lower_command=string.lower(command)
+       for k, c in pairs(client.get()) do
+           local class=string.lower(c.class)
+           if string.match(class, lower_command) then
+               for i, v in ipairs(c:tags()) do
+                   awful.tag.viewonly(v)
+                   c:raise()
+                   c.minimized = false
+                   return
+               end
+           end
+       end
+       awful.util.spawn(command)
+   end),
 
     awful.key({ modkey }, "x",
               function ()
