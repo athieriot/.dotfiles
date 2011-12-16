@@ -14,7 +14,7 @@ export VF_HOME=/usr/local/Cellar/vf/0.0.0-r61920
 export GREP_OPTIONS=""
 
 source $VF_HOME/bin/vf.sh
-export PATH=/usr/local/bin:/usr/local/sbin:/Users/aurelien/.gem/ruby/1.8/bin:$TALIESIN_HOME/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/Users/aurelien/.gem/ruby/1.8/bin:$PATH
 
 # AutoJump
 if [ -f `brew --prefix`/etc/autojump ]; then
