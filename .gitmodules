@@ -58,3 +58,6 @@
 	path = _vim/bundle/mucomment.vim
 	url = git://github.com/tonyskn/mucomment.vim.git
    ignore = untracked
+[submodule "_vim/bundle/vim-coffee-script"]
+	path = _vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
