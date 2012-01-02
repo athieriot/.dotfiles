@@ -21,5 +21,8 @@ if [ -f `brew --prefix`/etc/autojump ]; then
    . `brew --prefix`/etc/autojump
 fi
 
+# nvm activation
+. ~/.nvm/nvm.sh
+
 # Customize to your needs...
 set MAVEN_OPTS="-Xmx1024m"
