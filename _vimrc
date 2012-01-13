@@ -9,6 +9,9 @@ let maplocalleader = ","
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" display status line on every buffer
+set laststatus=2
+
 " disable error bell
 set noeb vb t_vb=
 
@@ -55,23 +58,6 @@ set incsearch
 set ignorecase
 set smartcase
 noremap <silent><Leader><space> :noh<CR>
-
-" }}}
-
-" Status Line {{{
-
-" customize statuline
-set statusline=%f%m\ %{fugitive#statusline()}\ [%{&ft}]\ %{SyntasticStatuslineFlag()}%=[%{&ff}/%{strlen(&fenc)?&fenc:&enc}]%=[POS=%l,%v]
- 
-" display statusline on every window
-set laststatus=2
-" highlight statusline of active window
-hi StatusLine ctermfg=darkgrey
-hi StatusLineNC cterm=none 
-
-" colorify statusline when in insert mode
-au InsertEnter * hi StatusLine term=reverse ctermfg=darkred
-au InsertLeave * hi StatusLine term=reverse ctermfg=darkgrey
 
 " }}}
 
@@ -164,6 +150,9 @@ call pathogen#helptags()
 set background=dark
 colorscheme solarized
 hi Normal ctermbg=none
+
+" set powerline plugin to use fancy symbols
+let g:Powerline_symbols = 'fancy'
 
 " set supertab completion scheme
 set completeopt=longest,menuone,preview
