@@ -28,8 +28,6 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export ANT_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export JAVA_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 
-export TALIESIN_HOME=/home/aurelien/Documents/sources/vidal-utilities/production-tools
- 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin
 
