@@ -2,10 +2,17 @@
 # mac configuration
 #
 
+function battery_charge {
+   echo `~/.battery.py` 2>/dev/null
+}
+
+RPROMPT=$RPROMPT' $(battery_charge)'
+
 export NODE_PATH=/usr/local/lib/node
 export HOMEBREW_EDITOR=vim
+export PLAY_HOME=/opt/play
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PLAY_HOME:$PATH
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads R M into a shell session.
