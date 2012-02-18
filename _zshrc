@@ -9,7 +9,7 @@ export ZSH_THEME="tjkirch"
 # export CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
@@ -41,7 +41,7 @@ alias bi="bundle install --path=vendor/bundle"
 
 alias please="sudo"
 
-alias mci='mvn clean install -Dmaven.test.skip=true -T2'
+alias mci='mvn clean install'
 
 export M2_DEBUG="-Xms512m -Xmx768m -XX:PermSize=256m -XX:MaxPermSize=256m -Dmaven.test.skip=true -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
 export M2_DEBUG_ALT="-Xms512m -Xmx768m -XX:PermSize=256m -XX:MaxPermSize=256m -Dmaven.test.skip=true -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=4000"
