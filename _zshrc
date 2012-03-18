@@ -12,7 +12,7 @@ export ZSH_THEME="tjkirch"
 export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
+export DISABLE_LS_COLORS="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -20,16 +20,12 @@ if [ $(uname) = "Darwin" ]
 then
    plugins=(git npm github brew ruby gem osx ssh-agent)
 else
-   plugins=(git npm github command-not-found ruby gem)
+   plugins=(git npm github ruby gem)
 fi
-
-# Disable oh-my-zsh auto-updates
-export DISABLE_AUTO_UPDATE=true
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-alias gitweb="git config --get remote.origin.url | sed -e 's/^.*github\.com./https:\/\/github.com\//' | sed -e 's/\.git$//' | xargs python -m webbrowser -t > /dev/null"
 alias ggl="git log --decorate --oneline --graph --all -20"
 
 alias printxml='xmllint --format -'
