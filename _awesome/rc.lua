@@ -15,6 +15,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal --hide-menubar"
+nautilus = "nautilus --no-desktop"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -223,9 +224,9 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    -- Prompt
-    -- awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
-    --
+    -- Custom keys
+    awful.key({ modkey,           }, "b",     function () awful.util.spawn(nautilus) end),
+    
    -- Run or raise applications with dmenu
    awful.key({ modkey }, "r",
    function ()
