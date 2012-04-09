@@ -64,3 +64,6 @@
 [submodule "_vim/bundle/powerline"]
 	path = _vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "_awesome/revelation"]
+	path = _awesome/revelation
+	url = https://bioe007@github.com/bioe007/awesome-revelation.git
