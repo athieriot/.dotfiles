@@ -36,6 +36,7 @@ alias deps="rm -rf node_modules && npm install"
 alias bi="bundle install --path=vendor/bundle"
 
 alias please="sudo"
+alias vi=vim
 
 alias mci='mvn clean install'
 
@@ -49,7 +50,12 @@ if [ "`uname`" = "Darwin" ]
 then
    source $HOME/.zshrc.extras.mac
 else
-   source $HOME/.zshrc.extras.linux
+   if [[ "`uname --kernel-release`" == *ARCH* ]]
+   then
+      source $HOME/.zshrc.extras.arch
+   else
+      source $HOME/.zshrc.extras.linux
+   fi
 fi
 
 source ~/.profile
