@@ -8,6 +8,8 @@ require("beautiful")
 require("naughty")
 --Revelation library. Like expose
 require("revelation")
+--Vicious widgets library
+require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -80,6 +82,27 @@ mytextclock = awful.widget.textclock({ align = "right" })
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+
+-- Memory widget
+memwidget = awful.widget.progressbar()
+memwidget:set_width(8)
+memwidget:set_height(20)
+memwidget:set_vertical(true)
+memwidget:set_background_color("#494B4F")
+memwidget:set_border_color(nil)
+memwidget:set_color("#AECF96")
+memwidget:set_gradient_colors({ "#AECF96", "#88A175", "#FF5656" })
+
+-- CPU Widget
+cpuwidget = awful.widget.graph()
+cpuwidget:set_width(50)
+cpuwidget:set_background_color("#494B4F")
+cpuwidget:set_color("#FF5656")
+cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
+
+-- Register widget
+vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
+vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -158,6 +181,8 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         s == 1 and mysystray or nil,
+        memwidget,
+        cpuwidget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }

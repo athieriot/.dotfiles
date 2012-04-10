@@ -67,3 +67,6 @@
 [submodule "_awesome/revelation"]
 	path = _awesome/revelation
 	url = https://bioe007@github.com/bioe007/awesome-revelation.git
+[submodule "_awesome/vicious"]
+	path = _awesome/vicious
+	url = http://git.sysphere.org/vicious
