@@ -20,7 +20,7 @@ if [ $(uname) = "Darwin" ]
 then
    plugins=(git npm github brew ruby gem osx ssh-agent)
 else
-   plugins=(git npm github ruby gem autojump)
+   plugins=(git npm github ruby gem ssh-agent)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -31,6 +31,7 @@ alias ggl="git log --decorate --oneline --graph --all -20"
 alias printxml='xmllint --format -'
 alias printjson='python -m json.tool'
 alias ll='ls -lh'
+alias l='ls++ -a --potsf'
 
 alias deps="rm -rf node_modules && npm install"
 alias bi="bundle install --path=vendor/bundle"

@@ -68,6 +68,8 @@ nnoremap * *<c-o>
 nnoremap K <nop>
 nnoremap <CR> O<ESC>
 nmap <Leader>$ <C-]>
+nmap j gj
+nmap k gk
 
 " Keep the search matches in the middle of the window
 nnoremap n nzzzv
