@@ -71,6 +71,9 @@ nmap <Leader>$ <C-]>
 nmap j gj
 nmap k gk
 
+" better numbers toggle
+nnoremap <F3> :NumbersToggle<CR>
+
 " Keep the search matches in the middle of the window
 nnoremap n nzzzv
 nnoremap N Nzzzv
