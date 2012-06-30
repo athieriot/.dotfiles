@@ -16,8 +16,8 @@ require("vicious")
 beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal --hide-menubar"
-nautilus = "nautilus --no-desktop"
+terminal = "urxvt -sl 655535"
+nautilus = "pantheon-files"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 

@@ -20,7 +20,7 @@ if [ $(uname) = "Darwin" ]
 then
    plugins=(git npm github brew ruby gem osx ssh-agent)
 else
-   plugins=(git npm github ruby gem ssh-agent)
+   plugins=(git npm github ruby gem archlinux ssh-agent)
 fi
 
 source $ZSH/oh-my-zsh.sh
