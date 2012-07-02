@@ -9,6 +9,8 @@
 # Alias
 alias gl='git log --graph --oneline --decorate --all --color'
 
+alias l='ls++'
+
 export EDITOR=vim
 
 export MAVEN_HOME=/opt/maven                                                      
