@@ -62,7 +62,7 @@ mvn2() {
       -e "s/^\(.WARNING. .*\)$/$YELLOW\1$NORMAL/"
 }
 
-alias mci='mvn2 clean install'
+alias mci='mvn clean install'
 
 if [ "`uname`" = "Darwin" ]
 then
