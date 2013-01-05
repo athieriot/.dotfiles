@@ -1,4 +1,28 @@
+--
+-- Configuration file for XMonad + MATE
+--
+--  Usage:
+--      * Copy this file to ~/.xmonad/
+--      * Run:    $ xmonad --recompile
+--      * Launch: $ xmonad --replace
+--      [Optional] Create an autostart to command with "xmonad --replace"
+--
+--  Author: Arturo Fernandez <arturo at bsnux dot com>
+--  Inspired by:
+--      Spencer Janssen <spencerjanssen@gmail.com>
+--      rfc <reuben.fletchercostin@gmail.com>
+--  License: BSD
+--
 import XMonad
+import XMonad.Config.Desktop
+import XMonad.Util.Run (safeSpawn)
+import qualified Data.Map as M
+import System.Environment (getEnvironment)
+import XMonad.Util.EZConfig
+
+import XMonad
+import XMonad.Actions.CycleWS
+import XMonad.Actions.GridSelect
 import XMonad.Config.Azerty
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ICCCMFocus
@@ -12,91 +36,79 @@ import XMonad.Layout.Spacing
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig
-import XMonad.Util.SpawnOnce
 
-import Control.Monad ((<=<))
+import qualified XMonad.StackSet as W
+
+import Control.Monad
+import Data.Monoid (Monoid)
 import System.Environment (getEnvironment)
-
--- XMonad execution mode
-data Mode = DEFAULT | LAPTOP
--- Try guessing `Mode` from environment variable `XMONAD_MODE`
-mode :: X Mode
-mode = liftIO $ guessFrom =<< getEnvironment
-    where guessFrom = return . maybe DEFAULT read . lookup "XMONAD_MODE"
-          read s = if s == "laptop" then LAPTOP else DEFAULT
 
 -- Define workspaces as (workspaceId, [className]) tuples where
 -- [className] contains the X WM_CLASS propertes of the windows
 -- bound to workspaceId.
-workspaces' = [ ("1:main", ["Google-chrome", "Hotot"])
-              , ("2:term", [])
-              , ("3:ide" , ["jetbrains-idea"])
-              , ("4:chat", ["Gajim.py"])
-              , ("5:misc", [])
-              , ("6:misc", ["VirtualBox"])
-              , ("7:scratch", ["Firefox"]) ]
-
-layoutHook' = onWorkspace "3:ide" nobordersLayout
-            $ onWorkspace "4:chat" chatLayout
-            $ tiled1 ||| nobordersLayout
-    where tiled1 = spacing 5 $ Tall nmaster1 delta ratio
-          nmaster1 = 1
-          ratio = 17/24
-          delta = 3/100
-          nobordersLayout = noBorders $ Full
-          chatLayout = withIM (20/100) (Role "roster") (spacing 8 Grid)
+workspaces' = [ ("1:main", ["Google-chrome"])
+              , ("2:term", []) 
+              , ("3", []) 
+              , ("4", []) 
+              , ("5", []) ]
 
 -- [ubuntu] apt-get remove appmenu-gtk3 appmenu-gtk appmenu-qt
-terminal' = "gnome-terminal --hide-menubar"
+terminal' = "mate-terminal --hide-menubar"
 
-startupHook' mode = case mode of
-    LAPTOP -> mapM_ spawnOnce [ "nm-applet", unclutter, "dropboxd" ]
-               >> spawn "~/.xmonad/xmobar/monitors.sh"
-    DEFAULT -> mapM_ spawnOnce
-               [ "gnome-settings-daemon", unclutter , "~/.dropbox-dist/dropboxd"
-                , "feh --bg-scale ~/.dotfiles/world-map-wallpaper.png" ]
-    where unclutter = "unclutter -idle 1 -reset"
+-- status bars font
+font' = "xft:Mensch:size=9:bold:antialias=true"
 
 xpConfig' = defaultXPConfig { bgColor  = "black", fgColor  = "yellow"
-                      , font = "xft:Mensch:size=10:bold:antialias=true"
-                      , position = Top, promptBorderWidth = 0
-                      , height = 25, historySize = 256 }
+                      , font = font', position = Top, promptBorderWidth = 0
+                      , height = 20, historySize = 256 }
+
+gsConfig' = defaultGSConfig { gs_font=font', gs_cellwidth=400 }
 
 xmobar' = statusBar xmobar pp toggleStrutsKey
     where
-        xmobar = "xmobar ~/.xmonad/xmobar/xmobarrc.hs"
+        xmobar = "xmobar ~/.xmonad/xmobar/xmobarrc.hs -f " ++ font'
         pp = xmobarPP
            { ppTitle = xmobarColor "green" ""
             , ppLayout = const ""
             , ppUrgent = xmobarColor "yellow" "red" . xmobarStrip }
         toggleStrutsKey = const (mod4Mask, xK_b)
 
-main = xmonad <=< xmobar' $ withUrgencyHook NoUrgencyHook $ azertyConfig
-        { workspaces = map fst workspaces'
-        , startupHook = startupHook' =<< mode
-        , logHook = takeTopFocus -- fixes glitches in Java GUI apps
-        , normalBorderColor  = "#586e75" -- solarized base01
-        , focusedBorderColor = "#cb4b16" -- solarized orange
-        , borderWidth = 2
-        , terminal = terminal'
-        , modMask = mod4Mask
-        , focusFollowsMouse = False
-        , layoutHook = layoutHook'
-        , manageHook = manageHook' }
-        `additionalKeysP`
-            [ ("M-p"  , shellPrompt xpConfig')
-            , ("M-S-q", spawn "pkill 'gnome-session|xmonad'")
-            , ("M-f"  , spawn "nautilus --no-desktop")
-            , ("M-S-b", sendMessage (ToggleStrut D))
-            , ("M-<Backspace>", focusUrgent)
-            , ("M-n"  , spawn "touch ~/.pomodoro_session")
-            , ("M-S-n", spawn "rm ~/.pomodoro_session")
-            , ("M-S-,", spawn "gnome-control-center")
-            , ("M-s"  , spawn "gnome-screenshot -i") ]
-        `additionalMouseBindings`
-            -- disable floating windows on mouse left-click
-            [ ((mod4Mask, button1), const $ return ()) ]
-    where manageHook' = foldl1 (<+>) $ do
-            (id, xCNames) <- workspaces'
-            xCName <- xCNames
-            return (className =? xCName --> doShift id)
+mateConfig = desktopConfig
+    { terminal = "mate-terminal"
+    , keys     = mateKeys <+> keys desktopConfig
+    }
+
+mateKeys (XConfig {modMask = modm}) = M.fromList $
+    [ ((modm, xK_p), mateRun)
+    , ((modm .|. shiftMask, xK_q), spawn "mate-session-save --kill") ]
+
+mateRun :: X ()
+mateRun = withDisplay $ \dpy -> do
+    rw <- asks theRoot
+    mate_panel <- getAtom "_MATE_PANEL_ACTION"
+    panel_run   <- getAtom "_MATE_PANEL_ACTION_RUN_DIALOG"
+
+    io $ allocaXEvent $ \e -> do
+        setEventType e clientMessage
+        setClientMessageEvent e rw mate_panel 32 panel_run 0
+        sendEvent dpy rw False structureNotifyMask e
+        sync dpy False
+
+main = do
+    xmonad <=< xmobar' $ mateConfig
+                { workspaces = map fst workspaces'
+                 , logHook = takeTopFocus -- fixes glitches in Java GUI apps
+                 , terminal = terminal'
+                 , modMask = mod4Mask
+                 , borderWidth = 2
+                 , normalBorderColor  = "#586e75" -- solarized base01
+                 , focusedBorderColor = "#cb4b16" -- solarized orange
+                } `additionalKeysP` myKeys
+
+myKeys = [  (("M4-p"), shellPrompt xpConfig')
+          , (("M4-b"), spawn "caja --no-desktop")
+          , (("M4-<Tab>"), goToSelected gsConfig')
+          , (("M4-<Left>"), moveTo Prev NonEmptyWS)
+          , (("M4-<Right>"), moveTo Next NonEmptyWS)
+          , (("M4-z"), kill)
+         ]

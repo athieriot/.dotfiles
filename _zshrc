@@ -43,6 +43,12 @@ alias vi=vim
 export M2_DEBUG="-Xms512m -Xmx768m -XX:PermSize=256m -XX:MaxPermSize=256m -Dmaven.test.skip=true -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
 export M2_DEBUG_ALT="-Xms512m -Xmx768m -XX:PermSize=256m -XX:MaxPermSize=256m -Dmaven.test.skip=true -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=4000"
 
+export PERL_LOCAL_LIB_ROOT="/home/aurelien/perl5";
+export PERL_MB_OPT="--install_base /home/aurelien/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/aurelien/perl5";
+export PERL5LIB="/home/aurelien/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/aurelien/perl5/lib/perl5";
+export PATH="/home/aurelien/perl5/bin:$PATH";
+
 export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
 
 PURPLE=$(echo -en "\033[35m")

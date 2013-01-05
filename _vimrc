@@ -154,6 +154,7 @@ call pathogen#helptags()
 " default colorscheme
 set background=dark
 colorscheme solarized
+" colorscheme TronLegacy
 hi Normal ctermbg=none
 
 " set powerline plugin to use fancy symbols
