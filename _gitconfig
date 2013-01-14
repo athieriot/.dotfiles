@@ -1,0 +1,7 @@
+[user]
+	email = a.thieriot@gmail.com
+	name = Aurélien Thieriot
+[color]
+	ui = true
+[core]
+	excludesfile = /home/aurelien/.gitignore_global
