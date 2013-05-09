@@ -1,0 +1,81 @@
+:recent
+help
+:recent
+:plugin install https://gist.github.com/jugyo/2159775
+plugin install https://gist.github.com/jugyo/2159775
+plugin install https://github.com/jugyo/earthquake
+delete $ab
+delete $aa
+:plugin_install https://github.com/jugyo/earthquake
+:plugin_install https://gist.github.com/jugyo/2167186
+:plugin_install https://gist.github.com/jugyo/2159775
+:recent
+:look jrcryer
+:recent
+:look jrcryer
+:look -c jcryer
+:look -c -w 100 jcryer
+:look -c --width 100 jcryer
+:look -c --width=100 jcryer
+:preview jcryer
+:preview -w 200 jcryer
+:preview -w 100 jcryer
+:preview -w 120 jcryer
+:preview -w 20 jcryer
+:preview -w 2 jcryer
+:preview jcryer
+
+:preview -c jcryer
+:preview http://t.co/Ex3DRoWs2p
+:bd :status $bd
+:eval :status $bd
+:eval config[:raw_text] = true
+:recent
+:eval notify 'Hello World!'
+:look rdohms 
+:look $aa
+:recent
+:look £be
+:look $be
+:look $ax
+:plugin_install https://gist.github.com/adamtomecek/3187216
+:plugin_install https://gist.github.com/jugyo/2156204
+:aview rdohms 
+:look rdohms 
+:recent
+:thread $bh
+$bi
+:config
+:config expand_url true
+:config
+:config output_interval 10
+:config
+:recent
+:config output_interval 1
+:recent
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+:reply $bi Yes, but pubs must continue to work even when we are not in!
+:eval "\n" + "test"
+:eval "\\n" + "test"
+:eval "------"
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+:plugin_install https://gist.github.com/jaspertandy/1385833
+Earthquake is a nice command line twitter client. https://github.com/jugyo/earthquake
+:recent
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+:plugin_install https://gist.github.com/athieriot/5550290
+:recent
+Spacer: A simple plugin for earthquake to make it easier to read: https://gist.github.com/athieriot/5550290
+:recent
+:thread $at
+:recent
+:o $aw

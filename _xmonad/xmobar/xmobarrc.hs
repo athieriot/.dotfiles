@@ -1,5 +1,5 @@
  Config {
-       font = "xft:Mensch:size=7:bold:antialias=true"
+       font = "xft:Mensch:size=9:bold:antialias=true"
      , bgColor = "black"
      , fgColor = "grey"
      , position = Top

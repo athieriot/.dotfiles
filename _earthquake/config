@@ -1,0 +1,3 @@
+
+Earthquake.config[:token] = '9307922-vREilvSpmoZTuvc1mn2qpaJlsSwm5YnsJMjdziZhts'
+Earthquake.config[:secret] = 'tPCXWnWWoDEW04RG8i7Dr3iWA4JriQlmYBAFLMVOo'

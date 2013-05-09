@@ -33,6 +33,8 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export ANT_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export JAVA_OPTS='-Xmx1024m -XX:MaxPermSize=512m -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
+_JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
+
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin:$GEM_HOME/bin:/usr/bin/vendor_perl:$CABAL_HOME/bin
 

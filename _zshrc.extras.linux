@@ -12,8 +12,6 @@ alias gl='git log --graph --oneline --decorate --all --color'
 
 export EDITOR=vim
 
-export THIERIOT_USER=aurelien
-export THIERIOT_TOKEN=Psycho00714
 
 export MAVEN_HOME=/opt/maven                                                            
 export JAVA7_HOME=/usr/lib/jvm/java-7-oracle/
@@ -39,7 +37,10 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export ANT_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export JAVA_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 
-# Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/bin:/usr/games:$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin:/usr/bin/vendor_perl:$CABAL_HOME/bin:$COMPOSER_HOME:$SONAR_RUNNER_HOME/bin:$RBENV_HOME/bin:$THIERIOT_HOME
+export YEOMAN_CUSTOM_HOME=/home/aurelien/Dropbox/sources/yeoman/yeoman-custom/cli
 
+_JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
+
+# Customize to your needs...
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/bin:/usr/games:$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin:/usr/bin/vendor_perl:$CABAL_HOME/bin:$COMPOSER_HOME:$SONAR_RUNNER_HOME/bin:$RBENV_HOME/bin:$THIERIOT_HOME:$YEOMAN_CUSTOM_HOME/bin:$GEM_HOME/bin:$FANTOM_HOME/bin
 [[ -s "/home/aurelien/.rvm/scripts/rvm" ]] && source "/home/aurelien/.rvm/scripts/rvm"

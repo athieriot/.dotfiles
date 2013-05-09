@@ -21,11 +21,11 @@ import System.Environment (getEnvironment)
 import XMonad.Util.EZConfig
 
 import XMonad
+import XMonad.Hooks.ICCCMFocus
 import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
 import XMonad.Config.Azerty
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.Grid
@@ -36,6 +36,8 @@ import XMonad.Layout.Spacing
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig
+import XMonad.Hooks.SetWMName
+import XMonad.Hooks.EwmhDesktops
 
 import qualified XMonad.StackSet as W
 
@@ -46,7 +48,7 @@ import System.Environment (getEnvironment)
 -- Define workspaces as (workspaceId, [className]) tuples where
 -- [className] contains the X WM_CLASS propertes of the windows
 -- bound to workspaceId.
-workspaces' = [ ("1:main", ["Google-chrome"])
+workspaces' = [ ("1:main", ["google-chrome"])
               , ("2:term", []) 
               , ("3", []) 
               , ("4", []) 
@@ -97,7 +99,8 @@ mateRun = withDisplay $ \dpy -> do
 main = do
     xmonad <=< xmobar' $ mateConfig
                 { workspaces = map fst workspaces'
-                 , logHook = takeTopFocus -- fixes glitches in Java GUI apps
+                 , logHook = takeTopFocus >> setWMName "LG3D"
+                 , handleEventHook = fullscreenEventHook
                  , terminal = terminal'
                  , modMask = mod4Mask
                  , borderWidth = 2
@@ -106,7 +109,7 @@ main = do
                 } `additionalKeysP` myKeys
 
 myKeys = [  (("M4-p"), shellPrompt xpConfig')
-          , (("M4-b"), spawn "caja --no-desktop")
+          , (("M4-n"), spawn "caja --no-desktop")
           , (("M4-<Tab>"), goToSelected gsConfig')
           , (("M4-<Left>"), moveTo Prev NonEmptyWS)
           , (("M4-<Right>"), moveTo Next NonEmptyWS)
