@@ -1,38 +1,5 @@
 servers = (
   { address = "irc.ubuntu.com"; chatnet = "Ubuntu"; port = "8001"; },
-  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
-  },
-  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
-  },
-  { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  {
-    address = "irc.gamesurge.net";
-    chatnet = "GameSurge";
-    port = "6667";
-  },
-  { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
-  { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
-  { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  {
-    address = "irc.hq.boxuk.net";
-    chatnet = "IRCBoxUK";
-    port = "6667";
-    password = "Psycho00714";
-    use_ssl = "no";
-    ssl_verify = "no";
-    autoconnect = "yes";
-  },
   {
     address = "irc.freenode.org";
     chatnet = "freenode";
@@ -48,74 +15,41 @@ servers = (
     ssl_verify = "yes";
     ssl_capath = "/etc/ssl/certs";
     autoconnect = "yes";
+  },
+  {
+    address = "irc.hq.boxuk.net";
+    chatnet = "IRCBoxUK";
+    port = "6667";
+    password = "Psycho00714";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "conf.hipchat.com";
+    chatnet = "hipchat";
+    port = "5223";
+    use_ssl = "yes";
+    autoconnect = "yes";
+    password = "";
+  },
+  {
+    address = "talk.google.com";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    ssl_capath = "/etc/ssl/certs";
+    chatnet = "GTalk";
+    password = "";
+    autoconnect = "yes";
   }
 );
 
 chatnets = {
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
-  EFNet = { 
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "1";
-  };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  OFTC = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  GameSurge = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  WebChat = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  Rizon = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  LinkNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  SILC = { type = "SILC"; };
   Ubuntu = { type = "IRC"; };
+  freenode = { type = "IRC"; };
   IRCBoxUK = { type = "IRC"; nick = "aurelien"; username = "aurelien"; };
+  hipchat = { type = "XMPP"; nick = "46438_319908@chat.hipchat.com"; };
+  GTalk = { type = "XMPP"; nick = "a.thieriot@gmail.com"; };
 };
 
 channels = (
@@ -132,7 +66,95 @@ channels = (
   { name = "#catalyst"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
   { name = "#iam"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
   { name = "#micro"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
-  { name = "#cap"; chatnet = "IRCBoxUK"; autojoin = "yes"; }
+  { name = "#cap"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
+  { name = "#ops"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
+  { name = "#vim"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
+  { name = "#clojure"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
+  {
+    name = "46438_alt@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_box_uk_limited@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_cap@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_catalyst@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_clojure@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_cw@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_dev@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_fleetsuite@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_git@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_iam@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_isi@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_it_crowd@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_kitteh@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_micro@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_qa@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_team_ines@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_tunes@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  }
 );
 
 aliases = {
@@ -183,6 +205,7 @@ aliases = {
   ATAG = "WINDOW SERVER";
   UNSET = "set -clear";
   RESET = "set -default";
+  READ = "script exec \$_->activity(0) for Irssi::windows"
 };
 
 statusbar = {
@@ -305,6 +328,10 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; term_force_colors = "yes"; };
   "fe-common/core" = { theme = "xchat"; };
+  "fe-common/xmpp" = {
+    xmpp_send_composing = "no";
+  };
+  "xmpp/core" = { xmpp_set_nick_as_username = "yes"; };
 };
 hilights = (
   { text = "riot"; nick = "yes"; word = "yes"; },

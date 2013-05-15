@@ -25,7 +25,6 @@ export BREW_HOME=/opt/homebrew
 export SCALA_HOME=/opt/scala
 export SBT_HOME=/opt/sbt
 export FANTOM_HOME=/opt/fantom
-export GEM_HOME=/home/aurelien/.gem/ruby/1.9.1
 export CABAL_HOME=/home/aurelien/.cabal
 export COMPOSER_HOME=/usr/local/bin
 export SONAR_RUNNER_HOME=/opt/sonar-runner
@@ -38,6 +37,6 @@ export ANT_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export JAVA_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin:$GEM_HOME/bin:/usr/bin/vendor_perl:$CABAL_HOME/bin:$COMPOSER_HOME:$SONAR_RUNNER_HOME/bin:$RBENV_HOME/bin:$THIERIOT_HOME
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/bin:/usr/games:$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:$ECLIPSE_HOME:$PLAY_HOME:$SOAPUI_HOME/bin:$IDEA_HOME/bin:$BREW_HOME/bin:$BREW_HOME/sbin:$SCALA_HOME/bin:$INSTALL4J_HOME/bin:$TALIESIN_HOME/bin:$SBT_HOME/bin:$FANTOM_HOME/bin:/usr/bin/vendor_perl:$CABAL_HOME/bin:$COMPOSER_HOME:$SONAR_RUNNER_HOME/bin:$RBENV_HOME/bin:$THIERIOT_HOME
 
 [[ -s "/home/aurelien/.rvm/scripts/rvm" ]] && source "/home/aurelien/.rvm/scripts/rvm"
