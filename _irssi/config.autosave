@@ -31,7 +31,7 @@ servers = (
     port = "5223";
     use_ssl = "yes";
     autoconnect = "yes";
-    password = "";
+    password = "-DoL8hOuSe&hipchat-";
   },
   {
     address = "talk.google.com";
@@ -39,7 +39,7 @@ servers = (
     ssl_verify = "yes";
     ssl_capath = "/etc/ssl/certs";
     chatnet = "GTalk";
-    password = "";
+    password = "-DoL8hOuSe&gmail-";
     autoconnect = "yes";
   }
 );
@@ -70,11 +70,6 @@ channels = (
   { name = "#ops"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
   { name = "#vim"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
   { name = "#clojure"; chatnet = "IRCBoxUK"; autojoin = "yes"; },
-  {
-    name = "46438_.net@conf.hipchat.com";
-    chatnet = "hipchat";
-    autojoin = "yes";
-  },
   {
     name = "46438_alt@conf.hipchat.com";
     chatnet = "hipchat";
@@ -116,17 +111,17 @@ channels = (
     autojoin = "yes";
   },
   {
-    name = "46438_games@conf.hipchat.com";
-    chatnet = "hipchat";
-    autojoin = "yes";
-  },
-  {
     name = "46438_git@conf.hipchat.com";
     chatnet = "hipchat";
     autojoin = "yes";
   },
   {
     name = "46438_iam@conf.hipchat.com";
+    chatnet = "hipchat";
+    autojoin = "yes";
+  },
+  {
+    name = "46438_isi@conf.hipchat.com";
     chatnet = "hipchat";
     autojoin = "yes";
   },
@@ -157,16 +152,6 @@ channels = (
   },
   {
     name = "46438_tunes@conf.hipchat.com";
-    chatnet = "hipchat";
-    autojoin = "yes";
-  },
-  {
-    name = "46438_vagrant@conf.hipchat.com";
-    chatnet = "hipchat";
-    autojoin = "yes";
-  },
-  {
-    name = "46438_vim@conf.hipchat.com";
     chatnet = "hipchat";
     autojoin = "yes";
   }

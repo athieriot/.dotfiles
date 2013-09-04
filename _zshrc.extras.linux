@@ -12,13 +12,16 @@ alias gl='git log --graph --oneline --decorate --all --color'
 
 export EDITOR=vim
 
+export THIERIOT_USER=aurelien
+export THIERIOT_TOKEN=Psycho00714
+
 export MAVEN_HOME=/opt/maven                                                            
 export JAVA7_HOME=/usr/lib/jvm/java-7-oracle/
 export JAVA6_HOME=/opt/java
 export JAVA_HOME=$JAVA7_HOME
 export ANT_HOME=/opt/ant
 export ECLIPSE_HOME=/opt/eclipse
-export PLAY_HOME=/opt/play
+export PLAY_HOME=/home/aurelien/play
 export SOAPUI_HOME=/opt/soapui
 export IDEA_HOME=/opt/idea
 export BREW_HOME=/opt/homebrew
