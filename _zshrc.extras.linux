@@ -37,6 +37,7 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export ANT_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 export JAVA_OPTS='-Xmx1024m -XX:MaxPermSize=512m'
 
+export ANDROID_HOME=/opt/adt-bundle/sdk
 export YEOMAN_CUSTOM_HOME=/home/aurelien/Dropbox/sources/yeoman/yeoman-custom/cli
 
 _JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING

@@ -39,8 +39,8 @@ set cursorline
 
 " indentation and tabs
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set autoindent
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 noremap <silent><Leader>s :set list!<CR>
@@ -117,6 +117,7 @@ au BufNewFile,BufRead *zsh* set ft=zsh
 
 " JSON files are Javascript
 au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead *.scala set ft=scala
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby

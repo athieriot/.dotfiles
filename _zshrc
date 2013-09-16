@@ -21,10 +21,11 @@ if [ $(uname) = "Darwin" ]
 then
    plugins=(git npm github brew ruby gem osx ssh-agent)
 else
-   plugins=(git npm gem archlinux ssh-agent heroku mvn)
+   plugins=(git npm gem archlinux ssh-agent heroku mvn grunt)
 fi
 
 source $ZSH/oh-my-zsh.sh
+. ~/.dotfiles/bin/z/z.sh
 
 # Customize to your needs...
 alias ggl="git log --decorate --oneline --graph --all -20"
