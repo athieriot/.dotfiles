@@ -4,6 +4,14 @@
 [color]
 	ui = true
 [core]
-	excludesfile = /home/aurelien/.gitignore_global
+    excludesfile = /home/aurelien/.gitignore_global
 [push]
 	default = simple
+[sendemail]
+    smtpencryption = tls
+    smtpserver = smtp.gmail.com
+    smtpuser = a.thieriot@gmail.com
+    smtpserverport = 587
+    to = ben@scalar.is
+    cc = gareth@scalar.is
+    cc = paul@scalar.is
