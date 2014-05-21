@@ -105,6 +105,8 @@ noremap <silent><Leader>q <C-w>h:w<CR>:q<CR><C-w>k
 " Sudo write
 cmap w!! w !sudo tee % > /dev/null <CR>
 
+map <C-n> :NERDTreeToggle<CR>
+
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
