@@ -2,6 +2,30 @@
 	path = _vim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
   ignore = untracked
+[submodule "_vim/bundle/vim-jinja"]
+	path = _vim/bundle/vim-jinja
+	url = https://github.com/lepture/vim-jinja.git
+  ignore = untracked
+[submodule "_vim/bundle/vim-surround"]
+	path = _vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+  ignore = untracked
+[submodule "_vim/bundle/vim-sensible"]
+	path = _vim/bundle/vim-sensible
+	url =  git://github.com/tpope/vim-sensible.git
+  ignore = untracked
+[submodule "_vim/bundle/vim-repeat"]
+	path = _vim/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+  ignore = untracked
+[submodule "_vim/bundle/vim-javascript"]
+	path = _vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+  ignore = untracked
+[submodule "_vim/bundle/vim-go"]
+	path = _vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+  ignore = untracked
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -118,7 +142,10 @@
 	path = _vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
    ignore = untracked
-[submodule "_vim/bundles/vim-gitgutter"]
-	path = _vim/bundles/vim-gitgutter
+[submodule "_vim/bundle/vim-gitgutter"]
+	path = _vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
    ignore = untracked
+[submodule "_vim/bundle/speeddating"]
+	path = _vim/bundle/speeddating
+	url = git://github.com/tpope/vim-speeddating.git
