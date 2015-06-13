@@ -1,4 +1,3 @@
-
 " General Settings {{{
 
 set nocompatible
@@ -73,6 +72,7 @@ nmap k gk
 
 " better numbers toggle
 nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 " Keep the search matches in the middle of the window
 nnoremap n nzzzv
@@ -90,6 +90,7 @@ vnoremap <Space> za
 map <Leader>= <C-w>=
 map <Leader>l <C-w>L
 map <Leader>p <C-w>J
+map <Leader>+ <C-w>+
 
 " mappings for navigating the location list
 map <Leader>J :lfirst<CR>
@@ -164,7 +165,12 @@ colorscheme solarized
 hi Normal ctermbg=none
 
 " set powerline plugin to use fancy symbols
-let g:Powerline_symbols = 'fancy'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_powerline_fonts = 1
+let g:airline_theme="powerlineish"
+let g:airline_symbols.space = "\ua0"
 
 " set supertab completion scheme
 set completeopt=longest,menuone,preview
@@ -172,16 +178,16 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestHighlight = 1
 
 " configure FuzzyFinder mappings
-let g:fuf_modesDisable=[]
-noremap <silent><Leader>nf :FufFileWithCurrentBufferDir<CR>
-noremap <silent><Leader>nd :FufDir<CR>
-noremap <silent><Leader>nt :FufCoverageFile<CR>
-noremap <silent><Leader>nb :FufBuffer<CR>
-noremap <silent><Leader>ne :FufMruFile<CR>
-noremap <silent><Leader>nc :FufMruCmd<CR>
-noremap <silent><Leader>ng :FufLine<CR>
+"let g:fuf_modesDisable=[]
+"noremap <silent><Leader>nf :FufFileWithCurrentBufferDir<CR>
+"noremap <silent><Leader>nd :FufDir<CR>
+"noremap <silent><Leader>nt :FufCoverageFile<CR>
+"noremap <silent><Leader>nb :FufBuffer<CR>
+"noremap <silent><Leader>ne :FufMruFile<CR>
+"noremap <silent><Leader>nc :FufMruCmd<CR>
+"noremap <silent><Leader>ng :FufLine<CR>
 " open the latest search in :Fufline
-noremap <silent><leader>/ :execute ':FufLine ' . substitute(substitute(substitute(@/, "\\\\<", "", ""), "\\\\>", "", ""), "\\\\v", "", "")<CR>
+"noremap <silent><leader>/ :execute ':FufLine ' . substitute(substitute(substitute(@/, "\\\\<", "", ""), "\\\\>", "", ""), "\\\\v", "", "")<CR>
 
 " ZoomWin configuration
 map <silent><Leader><Leader> :ZoomWin<CR>
