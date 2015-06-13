@@ -111,7 +111,7 @@ map <C-n> :NERDTreeToggle<CR>
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
-" }}} 
+" }}}
 
 " Filetype Specific Rules {{{
 
