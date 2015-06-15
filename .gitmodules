@@ -153,6 +153,6 @@
 [submodule "_vim/bundle/speeddating"]
 	path = _vim/bundle/speeddating
 	url = git://github.com/tpope/vim-speeddating.git
-[submodule "/home/aurelien/.dotfiles/_vim/bundle/vim-signature"]
-	path = /home/aurelien/.dotfiles/_vim/bundle/vim-signature
+[submodule "_vim/bundle/vim-signature"]
+	path = _vim/bundle/vim-signature
 	url = git@github.com:kshenoy/vim-signature.git
