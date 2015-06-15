@@ -1,3 +1,5 @@
 .idea/
 web/storage
 *.iml
+*-*.iml
+atlassian-ide-plugin.xml

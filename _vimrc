@@ -86,6 +86,8 @@ inoremap <c-e> <esc>A
 nnoremap <Space> za
 vnoremap <Space> za
 
+map <C-n> :NERDTreeToggle<CR>
+
 " window shortcuts
 map <Leader>= <C-w>=
 map <Leader>l <C-w>L
