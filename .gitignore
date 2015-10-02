@@ -8,3 +8,4 @@ _xmonad/*.errors
 _xmonad/*-*
 Session.vim
 **/Session.vim
+_ssh/

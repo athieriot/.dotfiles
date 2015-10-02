@@ -41,7 +41,7 @@ export GRADLE_HOME=/opt/gradle
 
 export MAVEN_OPTS='-Xmx1024m'
 export ANT_OPTS='-Xmx1024m'
-export JAVA_OPTS='-Xmx1024m'
+export JAVA_OPTS='-Xmx1024m -Dsun.java2d.xrender=true'
 
 export YEOMAN_CUSTOM_HOME=/home/aurelien/Dropbox/sources/yeoman/yeoman-custom/cli
 
