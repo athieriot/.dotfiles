@@ -21,7 +21,7 @@ if [ $(uname) = "Darwin" ]
 then
    plugins=(git npm github brew ruby gem osx ssh-agent)
 else
-   plugins=(git npm gem archlinux ssh-agent heroku mvn grunt docker cabal pass aws)
+   plugins=(git npm gem ssh-agent heroku mvn grunt docker cabal aws colored-man-pages virtualenv pip)
 fi
 
 source $ZSH/oh-my-zsh.sh
